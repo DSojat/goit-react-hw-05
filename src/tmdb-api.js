@@ -1,0 +1,35 @@
+import axios from 'axios';
+
+const limitPage = 16;
+let searchParams = '';
+let pathParams = '';
+
+export default async function fetchMovieList(searchName, page) {
+  if (!searchName) {
+    axios.defaults.baseURL = 'https://api.themoviedb.org/3/trending/movie/';
+    pathParams = 'day';
+    searchParams = new URLSearchParams({
+      language: 'en-US',
+    });
+  } else {
+    searchParams = new URLSearchParams({
+      client_id: 'qMYZpRTdtJgfCxIW8pybBloCAnzGDxbuyrHXMxKdr-o',
+      query: searchImageName,
+      orientation: 'landscape',
+      content_filter: 'high',
+      per_page: limitPage,
+      page: page,
+    });
+  }
+
+  const options = {
+    headers: {
+      // Замість api_read_access_token вставте свій токен
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNDE3ODBhY2Y5NDQxNDI5Zjg2Nzc0OWVhNTVkMTBmZCIsInN1YiI6IjY2MmU0MWExMjRmMmNlMDEyNjJhYmNmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.L514NnKPXzM2VCgS267WCNtnLlmGyGi1nteIGzx9RPA',
+    },
+  };
+
+  const response = await axios.get(`${pathParams}?${searchParams}`, options);
+  return response.data;
+}
