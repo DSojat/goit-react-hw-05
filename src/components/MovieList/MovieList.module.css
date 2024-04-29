@@ -1,0 +1,8 @@
+.link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.link:active {
+  color: blueviolet;
+}

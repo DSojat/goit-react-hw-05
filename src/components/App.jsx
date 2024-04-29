@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Home from '../pages/HomePage/HomePage';
 import Movies from '../pages/MoviesPage/MoviesPage';
@@ -11,8 +10,6 @@ import Navigation from './Navigation/Navigation';
 // import MovieReviews from './MovieReviews/MovieReviews';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <Navigation></Navigation>

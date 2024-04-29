@@ -1,0 +1,4 @@
+.movieMainBox {
+  display: flex;
+  gap: 18px;
+}
