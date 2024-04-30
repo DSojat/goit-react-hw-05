@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const limitPage = 16;
+// const limitPage = 16;
 let searchParams = '';
 let pathParams = '';
 
@@ -20,12 +20,12 @@ export default async function fetchMovieList(searchName, page) {
       language: 'en-US',
     });
   } else {
+    axios.defaults.baseURL = 'https://api.themoviedb.org/3/search/';
+    pathParams = 'movie';
     searchParams = new URLSearchParams({
-      client_id: 'qMYZpRTdtJgfCxIW8pybBloCAnzGDxbuyrHXMxKdr-o',
-      query: searchImageName,
-      orientation: 'landscape',
-      content_filter: 'high',
-      per_page: limitPage,
+      query: searchName,
+      include_adult: 'false',
+      language: 'en-US',
       page: page,
     });
   }

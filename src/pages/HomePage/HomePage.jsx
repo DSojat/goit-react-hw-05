@@ -10,7 +10,7 @@ export default function Home() {
     const fetchData = async () => {
       try {
         const data = await fetchMovieList();
-        console.log(data.results);
+        // console.log(data.results);
         // if (data.results.length === 0) {
         //   throw new Error('No results found');
         // }
@@ -25,5 +25,10 @@ export default function Home() {
     fetchData();
   }, [movies]);
 
-  return <MovieList movies={movies}></MovieList>;
+  return (
+    <>
+      <h3>Trending today</h3>
+      <MovieList movies={movies}></MovieList>
+    </>
+  );
 }

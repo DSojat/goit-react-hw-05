@@ -1,6 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { Outlet, Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { getMovieById } from '../../tmdb-api';
 
@@ -26,7 +25,9 @@ export default function MoviesDetails() {
 
   return (
     <>
-      <button type="button">Go back</button>
+      <button className={css.button} type="button">
+        &#8656; Go back
+      </button>
       <div className={css.movieMainBox}>
         {movie.poster_path && (
           <img
@@ -44,10 +45,15 @@ export default function MoviesDetails() {
           <p>{movie.genres && movie.genres.map(({ name }) => name + ' ')}</p>
         </div>
       </div>
-      <div>
+      <div className={css.movieAddBox}>
         <p>Additional information</p>
-        <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-        <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+        <Link className={css.link} to="cast">
+          Cast
+        </Link>
+        <Link className={css.link} to="reviews">
+          Reviews
+        </Link>
+        <Outlet></Outlet>
       </div>
     </>
   );

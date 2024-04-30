@@ -6,8 +6,8 @@ import MovieDetails from '../pages/MovieDetailsPage/MovieDetailsPage';
 import NotFound from '../pages/NotFoundPage/NotFoundPage';
 
 import Navigation from './Navigation/Navigation';
-// import MovieCast from './MovieCast/MovieCast';
-// import MovieReviews from './MovieReviews/MovieReviews';
+import MovieCast from './MovieCast/MovieCast';
+import MovieReviews from './MovieReviews/MovieReviews';
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId" element={<MovieDetails />}>
-          {/* <Route path="/movies/:movieId/cast" element={<MovieCast />} /> */}
-          {/* <Route path="/movies/:movieId/reviews" element={<MovieReviews />} /> */}
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
