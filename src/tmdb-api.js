@@ -34,9 +34,13 @@ export default async function fetchMovieList(searchName, page) {
   return response.data;
 }
 
-export async function getMovieById(id) {
+export async function getMovieById(id, addInfo) {
   axios.defaults.baseURL = 'https://api.themoviedb.org/3/movie/';
-  pathParams = id;
+  if (!addInfo) {
+    pathParams = id;
+  } else {
+    pathParams = `${id}/${addInfo}`;
+  }
   searchParams = new URLSearchParams({
     language: 'en-US',
   });

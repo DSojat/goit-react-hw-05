@@ -1,3 +1,7 @@
+.li {
+  list-style: circle;
+}
+
 .link {
   color: blue;
   text-decoration: underline;
