@@ -40,7 +40,7 @@ export default function MoviesDetails() {
       }
     };
     fetchData();
-  }, [movie]);
+  }, [movieId]);
 
   return (
     <>

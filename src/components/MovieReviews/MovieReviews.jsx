@@ -15,10 +15,7 @@ export default function MovieReviews() {
         if (data.results.length === 0) {
           throw new Error('We don`t have any reviews for this movie');
         }
-        if (data.results.length < 5) {
-          setReviews(data.results.slice(0, data.results.length));
-        }
-        setReviews(data.results.slice(0, 5));
+        setReviews(data.results);
       } catch (error) {
         setError([true, error.message]);
       }
