@@ -8,7 +8,7 @@ export default function MovieReviews() {
   const [error, setError] = useState([false, undefined]);
 
   useEffect(() => {
-    if (Object.keys(reviews).length) return;
+    if (reviews.length) return;
     const fetchData = async () => {
       try {
         const data = await getMovieById(movieId, 'reviews');

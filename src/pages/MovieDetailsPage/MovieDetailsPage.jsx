@@ -15,7 +15,7 @@ export default function MoviesDetails() {
   const [error, setError] = useState([false, undefined]);
   const location = useLocation();
   const valueRef = useRef(location.state);
-  const backLinkHref = location.state ?? '/movies';
+  const backLinkHref = valueRef.current ?? '/movies';
   const navigate = useNavigate();
   const defaultImg =
     'https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg';
@@ -72,10 +72,10 @@ export default function MoviesDetails() {
           </div>
           <div className={css.movieAddBox}>
             <p>Additional information</p>
-            <Link className={css.link} to="cast" state={valueRef.current}>
+            <Link className={css.link} to="cast">
               Cast
             </Link>
-            <Link className={css.link} to="reviews" state={valueRef.current}>
+            <Link className={css.link} to="reviews">
               Reviews
             </Link>
           </div>
