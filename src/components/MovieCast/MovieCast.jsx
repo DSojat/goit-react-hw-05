@@ -43,7 +43,7 @@ export default function MovieCast() {
               width="120"
             />
             <p>&#9642; {name}</p>
-            <p>&#8195;Character: {character}</p>
+            {character && <p>&#8195;Character: {character}</p>}
           </div>
         ))}
       {error[0] && <p>{error[1]}</p>}
