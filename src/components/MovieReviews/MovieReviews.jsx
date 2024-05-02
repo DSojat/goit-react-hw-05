@@ -24,7 +24,7 @@ export default function MovieReviews() {
       }
     };
     fetchData();
-  }, [reviews]);
+  }, [movieId]);
 
   return (
     <div style={{ marginBottom: '24px' }}>

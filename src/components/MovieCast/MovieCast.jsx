@@ -24,7 +24,7 @@ export default function MovieCast() {
       }
     };
     fetchData();
-  }, [cast]);
+  }, [movieId]);
   return (
     <div style={{ marginBottom: '24px' }}>
       {cast &&
